@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camilo Andrés Flórez — Content Creator & Digital Strategist</title>
+  <meta name="description" content="Video Editor, AI Content Creator and Digital Marketing Strategist based in Bogotá, Colombia. Available for freelance and long-term projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --bg2: #ffffff;
+      --ink: #1a1814;
+      --ink2: #6b6960;
+      --ink3: #b5b2aa;
+      --border: #ebe9e3;
+      --border2: #d4d1c9;
+      --accent: #ff4d00;
+      --accent-light: #fff5f2;
+      --accent-hover: #e63d00;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(250,249,246,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .42rem 1.1rem;
+      border: 1.5px solid var(--accent);
+      border-radius: 100px;
+      color: var(--accent);
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .nav-cta:hover { background: var(--accent); color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 2.5rem 3.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 1.8rem;
+      height: 1.5px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -.025em;
+      margin-bottom: .3rem;
+    }
+    .hero-name .ac { color: var(--accent); }
+    .hero-tag {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      font-weight: 300;
+      color: var(--ink2);
+      margin-bottom: 2.2rem;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+    .hero-tag strong { color: var(--ink); font-weight: 500; }
+    .hero-btns {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .btn-p {
+      padding: .7rem 1.6rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 100px;
+      font-size: .84rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: all .2s;
+      border: none;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      display: inline-block;
+    }
+    .btn-p:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-s {
+      padding: .7rem 1.6rem;
+      border: 1.5px solid var(--border2);
+      border-radius: 100px;
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--ink2);
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-block;
+    }
+    .btn-s:hover { border-color: var(--ink); color: var(--ink); }
+    .stats {
+      display: flex;
+      gap: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .stat-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-lbl {
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink3);
+      margin-top: .3rem;
+    }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── SECTION ── */
+    .sec {
+      padding: 3.5rem 2.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .sec-hd {
+      display: flex;
+      align-items: baseline;
+      gap: .9rem;
+      margin-bottom: 2.2rem;
+    }
+    .sec-n {
+      font-family: 'Space Mono', monospace;
+      font-size: .65rem;
+      color: var(--accent);
+      letter-spacing: .1em;
+      white-space: nowrap;
+    }
+    .sec-t {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -.015em;
+    }
+
+    /* ── SERVICES ── */
+    .srv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .9rem;
+    }
+    .srv-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: all .25s;
+    }
+    .srv-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 24px rgba(255,77,0,.08);
+      transform: translateY(-2px);
+    }
+    .srv-emoji { font-size: 1.5rem; margin-bottom: .8rem; display: block; }
+    .srv-title { font-size: .92rem; font-weight: 600; margin-bottom: .45rem; }
+    .srv-desc { font-size: .78rem; color: var(--ink2); line-height: 1.65; }
+
+    /* ── WORK / TABS ── */
+    .tabs {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+    .tab {
+      font-size: .72rem;
+      font-weight: 500;
+      padding: .35rem .9rem;
+      border-radius: 100px;
+      border: 1px solid var(--border2);
+      color: var(--ink2);
+      cursor: pointer;
+      transition: all .2s;
+      background: transparent;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .tab.active, .tab:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── VIDEO GRID ── */
+    .vgrid {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .vgrid.show { display: grid; }
+    .vcard {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all .25s;
+    }
+    .vcard:hover {
+      border-color: var(--border2);
+      box-shadow: 0 6px 24px rgba(0,0,0,.06);
+    }
+    .vembed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .vembed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .vmeta { padding: .8rem 1rem 1rem; }
+    .vtitle { font-size: .82rem; font-weight: 600; color: var(--ink); margin-bottom: .3rem; }
+    .vtag {
+      font-size: .64rem;
+      padding: .15rem .55rem;
+      border-radius: 100px;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    /* ── TOOLS ── */
+    .tools-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.4rem;
+    }
+    .ttag {
+      font-size: .7rem;
+      font-weight: 500;
+      padding: .28rem .75rem;
+      border-radius: 100px;
+      letter-spacing: .05em;
+      border: 1px solid;
+    }
+    .ttag.o { color: #ff4d00; border-color: #ffd0c0; background: #fff5f2; }
+    .ttag.p { color: #7c3aed; border-color: #ddd6fe; background: #f5f3ff; }
+    .ttag.t { color: #0d9488; border-color: #99f6e4; background: #f0fdfa; }
+    .ttag.k { color: #db2777; border-color: #fbcfe8; background: #fdf2f8; }
+    .ttag.g { color: #6b7280; border-color: #e5e7eb; background: #f9fafb; }
+
+    /* ── ABOUT ── */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .about-photo {
+      width: 200px;
+      height: 240px;
+      border-radius: 14px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      color: var(--ink3);
+      text-align: center;
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .about-bio { }
+    .about-bio h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: .6rem;
+      letter-spacing: -.01em;
+    }
+    .about-bio p {
+      font-size: .85rem;
+      color: var(--ink2);
+      line-height: 1.75;
+      margin-bottom: .9rem;
+    }
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .4rem;
+    }
+    .about-tag {
+      font-size: .7rem;
+      font-weight: 500;
+      padding: .25rem .7rem;
+      border-radius: 100px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--ink2);
+    }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 4.5rem 2.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-t {
+      font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -.025em;
+      margin-bottom: .7rem;
+      line-height: 1.15;
+    }
+    .cta-t span { color: var(--accent); }
+    .cta-sub { font-size: .88rem; color: var(--ink2); margin-bottom: 1.8rem; }
+    .cta-email {
+      font-family: 'Space Mono', monospace;
+      font-size: .82rem;
+      color: var(--ink2);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .cta-btns { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .socials { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .soc {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .soc:hover { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 1.4rem 2rem;
+      font-size: .68rem;
+      color: var(--ink3);
+      letter-spacing: .06em;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav { padding: .9rem 1.2rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.2rem 2.5rem; }
+      .sec { padding: 2.5rem 1.2rem; }
+      .srv-grid { grid-template-columns: 1fr; }
+      .vgrid { grid-template-columns: 1fr; }
+      .stats { gap: 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-photo { width: 100%; height: 200px; }
+      .cta { padding: 3rem 1.2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="logo">CAF<span>Z</span></a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">Content Creator & Digital Strategist</p>
+    <h1 class="hero-name">Camilo<br>Andrés<br><span class="ac">Flórez</span></h1>
+    <p class="hero-tag">
+      I create <strong>content that connects</strong> — blending video production,
+      AI-powered creativity and digital strategy to grow brands in a competitive world.
+    </p>
+    <div class="hero-btns">
+      <a href="#work" class="btn-p">See my work ↓</a>
+      <a href="#contact" class="btn-s">Let's talk</a>
+    </div>
+    <div class="stats">
+      <div>
+        <div class="stat-num">10<span>+</span></div>
+        <div class="stat-lbl">Years experience</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-lbl">Countries</div>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-lbl">Disciplines</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="sec-hd">
+      <span class="sec-n">— Services</span>
+      <h2 class="sec-t">What I do</h2>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card">
+        <span class="srv-emoji">🎬</span>
+        <div class="srv-title">Video Editing</div>
+        <div class="srv-desc">Reels, shorts, corporate, podcast & educational videos. Precision cuts and narrative flow using Premiere Pro, After Effects and DaVinci Resolve.</div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-emoji">🤖</span>
+        <div class="srv-title">AI Content Creation</div>
+        <div class="srv-desc">AI-generated video, synthetic voice, animation and automated production pipelines — leveraging Runway ML, Kling AI, Midjourney and ElevenLabs.</div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-emoji">📣</span>
+        <div class="srv-title">Digital Marketing</div>
+        <div class="srv-desc">Meta & Google campaigns, SEO, Google Business optimization and data-driven growth strategies for brands and entrepreneurs.</div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-emoji">📊</span>
+        <div class="srv-title">Content Strategy</div>
+        <div class="srv-desc">Full creative pipelines for Instagram, TikTok, YouTube & LinkedIn — from concept and production to analytics and community growth.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PORTFOLIO -->
+  <section class="sec" id="work">
+    <div class="sec-hd">
+      <span class="sec-n">— Portfolio</span>
+      <h2 class="sec-t">My work</h2>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('video', this)">Video Editing</button>
+      <button class="tab" onclick="showTab('ai', this)">AI Content</button>
+      <button class="tab" onclick="showTab('motion', this)">Motion Graphics</button>
+      <button class="tab" onclick="showTab('corporate', this)">Corporate</button>
+    </div>
+
+    <!-- VIDEO EDITING -->
+    <div class="vgrid show" id="tab-video">
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/n032fvaGNgc" allowfullscreen loading="lazy" title="Showreel"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Showreel</div>
+          <span class="vtag">Video Editing</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/nJXRaFexTfU" allowfullscreen loading="lazy" title="Podcast Production"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Podcast Production</div>
+          <span class="vtag">Video</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/jX53RUYrE8s" allowfullscreen loading="lazy" title="Interview Video"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Interview Video</div>
+          <span class="vtag">Editorial</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/5HFZbuc8K58" allowfullscreen loading="lazy" title="Restaurant Promo"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Restaurant Promo</div>
+          <span class="vtag">Commercial</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/lNbJPsawoWQ" allowfullscreen loading="lazy" title="Freelance Project"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Freelance Project</div>
+          <span class="vtag">Video</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/TbhyOJq3NEI" allowfullscreen loading="lazy" title="Appliance Store"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Appliance Store</div>
+          <span class="vtag">Commercial</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI CONTENT -->
+    <div class="vgrid" id="tab-ai">
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/QTvNzxSL7FQ" allowfullscreen loading="lazy" title="AI Content Creation"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">AI Content Creation</div>
+          <span class="vtag">Artificial Intelligence</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/NOKPl1bUrys" allowfullscreen loading="lazy" title="AI Video Production"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">AI Video Production</div>
+          <span class="vtag">AI</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/ShqRD8wMzM0" allowfullscreen loading="lazy" title="Educational Video"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Educational Video</div>
+          <span class="vtag">AI + Education</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/pkneQuUfBG8" allowfullscreen loading="lazy" title="Dynamic Flyer"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Dynamic Flyer</div>
+          <span class="vtag">AI Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOTION GRAPHICS -->
+    <div class="vgrid" id="tab-motion">
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/we_Sli6M6Pg" allowfullscreen loading="lazy" title="InFocus Logo Animation"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">InFocus Logo Animation</div>
+          <span class="vtag">Motion Graphics</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/N9JhGk-e4Ks" allowfullscreen loading="lazy" title="CAFZ Logo Animation"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">CAFZ Logo Animation</div>
+          <span class="vtag">Motion Graphics</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/EtfYcS7LPsk" allowfullscreen loading="lazy" title="Stream Overlay"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Stream Overlay</div>
+          <span class="vtag">Motion</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/iTC1gOSETqM" allowfullscreen loading="lazy" title="Art Store"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Art Store</div>
+          <span class="vtag">Promo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORPORATE -->
+    <div class="vgrid" id="tab-corporate">
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/RqUOA_j-hYk" allowfullscreen loading="lazy" title="GBI Texas Vol. 1"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">GBI Texas — Vol. 1</div>
+          <span class="vtag">Corporate</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/GblCsD4uB88" allowfullscreen loading="lazy" title="GBI Texas Vol. 2"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">GBI Texas — Vol. 2</div>
+          <span class="vtag">Corporate</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/rQ6JLCkGbQk" allowfullscreen loading="lazy" title="GBI Texas Vol. 3"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">GBI Texas — Vol. 3</div>
+          <span class="vtag">Corporate</span>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vembed">
+          <iframe src="https://www.youtube.com/embed/Bv8Jf2A-KJ8" allowfullscreen loading="lazy" title="Corporate Video"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vtitle">Corporate Video</div>
+          <span class="vtag">Freelance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- TOOLS -->
+  <section class="sec">
+    <div class="sec-hd">
+      <span class="sec-n">— Stack</span>
+      <h2 class="sec-t">Tools & platforms</h2>
+    </div>
+    <div class="tools-strip">
+      <span class="ttag o">Premiere Pro</span>
+      <span class="ttag o">After Effects</span>
+      <span class="ttag o">DaVinci Resolve</span>
+      <span class="ttag o">CapCut</span>
+      <span class="ttag p">Midjourney</span>
+      <span class="ttag p">Runway ML</span>
+      <span class="ttag p">ElevenLabs</span>
+      <span class="ttag p">Kling AI</span>
+      <span class="ttag t">Meta Business Suite</span>
+      <span class="ttag t">Google Ads</span>
+      <span class="ttag t">Meta Ads</span>
+      <span class="ttag k">Figma</span>
+      <span class="ttag k">Canva Pro</span>
+      <span class="ttag k">Adobe Illustrator</span>
+      <span class="ttag g">WordPress</span>
+      <span class="ttag g">SEO / Analytics</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="sec-hd">
+      <span class="sec-n">— About</span>
+      <h2 class="sec-t">Who I am</h2>
+    </div>
+    <div class="about-inner">
+      <div class="about-photo">
+        <!-- Replace the src below with your own photo path e.g. src="photo.jpg" -->
+        <!-- <img src="your-photo.jpg" alt="Camilo Andrés Flórez"> -->
+        📷<br><br>Add your photo here
+      </div>
+      <div class="about-bio">
+        <h3>Camilo Andrés Flórez</h3>
+        <p>
+          I'm a Multimedia Producer, Video Editor and Digital Marketing Specialist based in Bogotá, Colombia —
+          building content that bridges creativity, technology and communication.
+        </p>
+        <p>
+          Over more than a decade I've worked with businesses, organizations and entrepreneurs in Colombia,
+          the United States and Europe — helping them strengthen their digital presence and connect more
+          meaningfully with their audiences.
+        </p>
+        <p>
+          What drives me most right now is the integration of artificial intelligence into creative workflows:
+          AI video generation, synthetic voice, automated pipelines, and tools that make high-quality
+          production faster and more accessible.
+        </p>
+        <p>
+          Beyond tools, my real strength is understanding a brand's goals and turning them into
+          communication strategies that generate real results.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">📍 Bogotá, Colombia</span>
+          <span class="about-tag">🌎 Available worldwide</span>
+          <span class="about-tag">🤝 Freelance & long-term</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section class="cta" id="contact">
+    <h2 class="cta-t">Let's build something<br><span>worth watching.</span></h2>
+    <p class="cta-sub">Available for freelance projects, long-term collaborations and creative partnerships.</p>
+    <span class="cta-email">camiloandresflorezz@gmail.com</span>
+    <div class="cta-btns">
+      <a href="mailto:camiloandresflorezz@gmail.com" class="btn-p">Get in touch →</a>
+    </div>
+    <div class="socials">
+      <!-- Replace # with your real profile URLs -->
+      <a class="soc" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="soc" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a class="soc" href="#" target="_blank" rel="noopener">YouTube</a>
+      <a class="soc" href="#" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 Camilo Andrés Flórez · Bogotá, Colombia · CAFZ
+  </footer>
+
+  <script>
+    function showTab(id, btn) {
+      document.querySelectorAll('.vgrid').forEach(p => p.classList.remove('show'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('show');
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
